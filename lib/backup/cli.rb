@@ -183,7 +183,7 @@ module Backup
         Logger.clear!
       end
 
-      exit(errors ? 2 : 1) if errors || warnings
+      errors || warnings ? exit(errors ? 2 : 1) : exit(0)
     end
 
     ##
